@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+  @media (max-width: 1024px) {
+    .portfolio-container {
+        flex-direction: column;
+        padding: 40px;
+    }
+    .skills, .latest-project {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        padding: 30px;
+    }
+}
+.latest-project img {
+    width: 100%;
+    max-width: 500px; /* Prevent stretching on large screens */
+    border-radius: 5px;
+}
+
+.btn {
+    transition: background-color 0.3s ease;
+}
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+        .portfolio-container {
+            display: flex;
+            gap: 20px;
+            background: white;
+            padding: 100px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .skills, .latest-project {
+            width: 50%;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .latest-project img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-container">
+        <div class="skills">
+            <h1>My Skills</h1>
+            <div class="skill-category">
+                <h3>Front-End</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Angular</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Back-End</h3>
+                <ul>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>UI/UX Design</h3>
+                <ul>
+                
+                </ul>
+            </div>
+        </div>
+        
+        <div class="latest-project">
+            <h1>Latest Project</h1>
+            <img src="C:\Users\HP\Downloads\portfolio1.jpeg.jpg" alt="Latest Project">
+            <h3>Project Name</h3>
+            <p><strong>portfolio:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#" class="btn">Live Preview</a>
+            <a href="#" class="btn">Source Code</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll(".btn");
+            buttons.forEach(button => {
+                button.addEventListener("mouseover", function() {
+                    this.style.backgroundColor = "#0056b3";
+                });
+                button.addEventListener("mouseout", function() {
+                    this.style.backgroundColor = "#007BFF";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

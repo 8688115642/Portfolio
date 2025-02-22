@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        /* CSS Styles */
+        .container {
+    width: 100%;
+    max-width: 400px; /* Maximum width on larger screens */
+    padding: 20px;
+}
+input, textarea {
+    font-size: 14px; /* Better readability */
+}
+input:focus, textarea:focus {
+    border-color: #0056b3; /* Blue border on focus */
+    outline: none;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            display:  flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 90vh;
+            background-color: #ffffff;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 100px;
+            width: 250px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align:  center;
+        }
+        h2 {
+            margin-bottom: 50px;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #00ccff;
+            border-radius: 5px;
+            font-size: 10px;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 60%;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form id="contact-form">
+            <h2>Contact Me!</h2>
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="response-message" style="color: green; display: none;">Message sent successfully!</p>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("response-message").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("response-message").style.display = "none";
+            }, 3000);
+            this.reset(); // Reset form fields
+        });
+
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    
+    if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return;
+    }
+    
+    document.getElementById("response-message").style.display = "block";
+    setTimeout(() => {
+        document.getElementById("response-message").style.display = "none";
+    }, 3000);
+    
+    this.reset(); // Reset form fields after success
+});
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const responseMessage = document.getElementById("response-message");
+    responseMessage.classList.add("show");
+    setTimeout(() => {
+        responseMessage.classList.remove("show");
+    }, 3000);
+    this.reset(); // Reset form fields
+});
+
+    </script>
+
+</body>
+</html>
